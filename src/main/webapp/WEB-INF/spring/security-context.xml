@@ -11,8 +11,10 @@
 	<bean id="customLoginSuccess"
 		class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 
-	<bean id="customPasswordEncoder"
-		class="org.zerock.security.CustomNoOpPasswordEncoder"></bean>
+<!-- 	<bean id="customPasswordEncoder"
+		class="org.zerock.security.CustomNoOpPasswordEncoder"></bean> -->
+		
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 
 	<security:http>
 		<security:intercept-url pattern="/sample/all"
@@ -44,8 +46,9 @@
 			<security:jdbc-user-service
 				data-source-ref="dataSource" />
 
-			<security:password-encoder
-				ref="customPasswordEncoder" />
+			<!-- <security:password-encoder
+				ref="customPasswordEncoder" /> -->
+			<security:password-encoder ref="bcryptPasswordEncoder" />
 
 		</security:authentication-provider>
 	</security:authentication-manager>
