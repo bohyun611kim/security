@@ -21,12 +21,12 @@
 	<form method='post' action="/login">
 
 		<div>
-			<input type='text' name='username' value='admin'>
+			<input type='text' name='username' />
 		</div>
 		<br>
 		
 		<div>
-			<input type='password' name='password' value='admin'>
+			<input type='password' name='password' />
 		</div>
 		<br>
 

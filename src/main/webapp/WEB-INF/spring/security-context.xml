@@ -5,7 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+	<!--  핸들러 등록  -->
+	<bean id="customAccessDenied" class="org.zerock.security.CustomAccessDeniedHandler"></bean>
+	<bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 
 	<security:http>
 		<security:intercept-url pattern="/sample/all"
@@ -14,13 +16,14 @@
 		<security:intercept-url
 			pattern="/sample/member" access="hasRole('ROLE_MEMBER')" />
 
+		<!--  접근권한으로 로그인 성공시 성공로직, 실패시 실패로직  -->
 		<security:intercept-url pattern="/sample/admin"
 			access="hasRole('ROLE_ADMIN')" />
 		
-		<!--  커스텀 로그인 추가  -->
-		<security:form-login login-page="/customLogin" />
+		<security:access-denied-handler ref="customAccessDenied"  />
 		
-		<security:access-denied-handler error-page="/accessError"/>
+		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
+		
 
 	</security:http>
 
