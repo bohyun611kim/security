@@ -8,11 +8,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>접근제한 페이지 </title>
 </head>
 <body>
 
-	<h1>Access Denied Page</h1>
+	<h1>403 접근제한 페이지</h1><hr>
 
 
 	<h2>

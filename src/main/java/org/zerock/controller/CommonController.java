@@ -15,7 +15,7 @@ public class CommonController {
 
     log.info("access Denied : " + auth);
 
-    model.addAttribute("msg", "Access Denied");
+    model.addAttribute("msg", "이 페이지는 권한없는 사용자가 접근할 수 없습니다.");
   }
 
 }
