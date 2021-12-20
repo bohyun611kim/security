@@ -20,6 +20,7 @@ public class SampleController {
   public void doAll() {
     
     log.info("do all can access everybody");
+    log.info("시큐리티 세계에 오신것을 환영합니다!");
   }
   
   @GetMapping("/member")
