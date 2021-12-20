@@ -24,6 +24,8 @@
 		
 		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
 		
+		<security:logout logout-url="/customLogout" invalidate-session="true" />
+		
 
 	</security:http>
 
