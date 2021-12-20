@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
+public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {//
 
   @Override
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
@@ -44,7 +44,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
       return;
     }
 
-    response.sendRedirect("/");
+    response.sendRedirect("/");// 루
   }
 }
 

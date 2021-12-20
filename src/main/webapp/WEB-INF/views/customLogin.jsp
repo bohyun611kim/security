@@ -12,6 +12,7 @@
 
 	<h1>커스텀 로그인 페이지</h1>
 	<h2>
+		<!-- 로그인 실패시 에러 메세지 출력  -->
 		<c:out value="${error}" />
 	</h2>
 	<h2>
@@ -24,7 +25,7 @@
 			<input type='text' name='username' />
 		</div>
 		<br>
-		
+
 		<div>
 			<input type='password' name='password' />
 		</div>

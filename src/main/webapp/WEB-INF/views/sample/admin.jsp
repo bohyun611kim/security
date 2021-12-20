@@ -9,11 +9,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>관리자 페이지</title>
 </head>
 <body>
-	
-	<h1>/sample/admin page</h1>
 
+	<h1>/sample/admin page</h1>
+	<a href="/customLogout">로그아웃</a>
 </body>
 </html>
