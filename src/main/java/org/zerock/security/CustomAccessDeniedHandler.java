@@ -12,12 +12,11 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
-public class CustomAccessDeniedHandler implements AccessDeniedHandler {
+public class CustomAccessDeniedHandler implements AccessDeniedHandler { // 구현체를 만들어 준다.
 
   @Override
-  public void handle(HttpServletRequest request, 
-      HttpServletResponse response, AccessDeniedException accessException)
-      throws IOException, ServletException {
+  public void handle(HttpServletRequest request, HttpServletResponse response,
+      AccessDeniedException accessException) throws IOException, ServletException {
 
     log.error("Access Denied Handler");
 

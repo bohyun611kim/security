@@ -16,8 +16,9 @@
 
 		<security:intercept-url pattern="/sample/admin"
 			access="hasRole('ROLE_ADMIN')" />
-
-		<security:form-login />
+		
+		<!--  커스텀 로그인 추가  -->
+		<security:form-login login-page="/customLogin" />
 		
 		<security:access-denied-handler error-page="/accessError"/>
 
