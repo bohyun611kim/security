@@ -14,6 +14,25 @@
 <body>
 
 	<h1>/sample/admin page</h1>
+
+	<p>
+		principal :
+		<sec:authentication property="principal" />
+	</p>
+	<p>
+		MemberVO :
+		<sec:authentication property="principal.member" />
+	</p>
+	<p>
+		사용자 이름 :
+		<sec:authentication property="principal.member.userName" />
+	</p>
+	<p>
+		사용자 권한리스트 :
+		<sec:authentication property="principal.member.authList" />
+	</p>
+
 	<a href="/customLogout">로그아웃</a>
+
 </body>
 </html>
