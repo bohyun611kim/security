@@ -33,9 +33,9 @@
 
 		<security:form-login login-page="/customLogin"
 			authentication-success-handler-ref="customLoginSuccess" />
-
+		<!--  로그아웃 시 쿠키삭제  -->
 		<security:logout logout-url="/customLogout"
-			invalidate-session="true" />
+			invalidate-session="true" delete-cookies="remember-me, JSESSION_ID" />
 			
 		<!-- 로그인 기억하기 -->
 		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
