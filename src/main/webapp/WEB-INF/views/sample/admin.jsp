@@ -14,9 +14,10 @@
 <body>
 
 	<h1>/sample/admin page</h1>
-
+	
+	<!--  CustomerUserDetailService 반환된 객체 : CustomerMember getMember 호출   -->	
 	<p>
-		principal :
+		principal : 
 		<sec:authentication property="principal" />
 	</p>
 	<p>

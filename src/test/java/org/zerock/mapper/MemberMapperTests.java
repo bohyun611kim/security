@@ -18,19 +18,19 @@ public class MemberMapperTests {
 
   @Setter(onMethod_ = @Autowired)
   private MemberMapper mapper;
-  
-  
+
+
   @Test
   public void testRead() {
-    
-    MemberVO vo = mapper.read("admin90");
-    
+
+    MemberVO vo = mapper.read("admin99");
+
     log.info(vo);
-    
+
     vo.getAuthList().forEach(authVO -> log.info(authVO));
-    
+
   }
-  
+
 }
 
 
