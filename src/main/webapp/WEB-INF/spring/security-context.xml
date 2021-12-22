@@ -36,6 +36,9 @@
 
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" />
+			
+		<!-- 로그인 기억하기 -->
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
 
 
 	</security:http>

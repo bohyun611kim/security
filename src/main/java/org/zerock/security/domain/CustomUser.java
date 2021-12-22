@@ -18,12 +18,12 @@ public class CustomUser extends User {
   private MemberVO member;
 
   public CustomUser(String username, String password,
-      Collection<? extends GrantedAuthority> authorities) { 
-    super(username, password, authorities); // 부모 생성자 호출 
+      Collection<? extends GrantedAuthority> authorities) {
+    super(username, password, authorities); // 부모 생성자 호출
   }
 
   public CustomUser(MemberVO vo) {
-    // 부모 생성자 호출 
+    // 부모 생성자 호출
     super(vo.getUserid(), vo.getUserpw(), vo.getAuthList().stream()
         .map(auth -> new SimpleGrantedAuthority(auth.getAuth())).collect(Collectors.toList()));
 
