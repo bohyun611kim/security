@@ -11,9 +11,15 @@
 	<bean id="customLoginSuccess"
 		class="org.zerock.security.CustomLoginSuccessHandler"></bean>
 
+	<!--  로그인 실패시 전달해줄 처리 값 정의  -->
+	<bean id="customLoginFailureHandler"
+		class="org.zerock.security.CustomLoginFailureHandler">
+	</bean>
+	
+
 	<bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
-	<!-- 유저정보, 권한정보 서비스  -->
+	<!-- 유저정보, 권한정보 서비스 -->
 	<bean id="customUserDetailsService"
 		class="org.zerock.security.CustomUserDetailsService"></bean>
 
@@ -31,14 +37,29 @@
 		<security:access-denied-handler
 			ref="customAccessDenied" />
 
-		<security:form-login login-page="/customLogin"
-			authentication-success-handler-ref="customLoginSuccess" />
-		<!--  로그아웃 시 쿠키삭제  -->
+		<!--  
+			1. login-page : 커스텀 로그인 페이지 
+			2. login-processing-url
+			3.default-target-url : 로그인 성공 이후 이동 페이지 
+			4. username-parameter : 유저 아이디 어떻게 받을지 (폼 이름과 동일하게 해야한다.)
+			5. password-parameter : 위 동일 
+
+		  -->
+		<security:form-login 
+			login-page="/customLogin"
+			default-target-url="/"
+			username-parameter="username"
+			password-parameter="password"
+			authentication-success-handler-ref="customLoginSuccess"
+			authentication-failure-handler-ref="customLoginFailureHandler" />
+
+		<!-- 로그아웃 시 쿠키삭제 -->
 		<security:logout logout-url="/customLogout"
 			invalidate-session="true" delete-cookies="remember-me, JSESSION_ID" />
-			
+
 		<!-- 로그인 기억하기 -->
-		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
+		<security:remember-me
+			data-source-ref="dataSource" token-validity-seconds="604800" />
 
 
 	</security:http>
